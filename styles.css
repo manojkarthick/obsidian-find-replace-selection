@@ -1,0 +1,8 @@
+/* The text that "Find in selection" is limited to. */
+.frs-search-scope {
+	background-color: hsla(var(--interactive-accent-hsl), 0.12);
+}
+
+.document-search-container.frs-in-selection .document-search-input input {
+	border-color: hsla(var(--interactive-accent-hsl), 0.6);
+}

@@ -1,0 +1,25 @@
+{
+	"name": "obsidian-find-replace-selection",
+	"version": "0.1.0",
+	"description": "Adds a 'Find in selection' toggle to Obsidian's built-in find and replace bar.",
+	"main": "main.js",
+	"scripts": {
+		"dev": "node esbuild.config.mjs",
+		"build": "tsc -noEmit -skipLibCheck && node esbuild.config.mjs production"
+	},
+	"license": "MIT",
+	"devDependencies": {
+		"@codemirror/search": "^6.5.6",
+		"@codemirror/state": "^6.4.1",
+		"@codemirror/view": "^6.26.3",
+		"@types/node": "^20.11.0",
+		"builtin-modules": "^3.3.0",
+		"esbuild": "^0.21.5",
+		"obsidian": "latest",
+		"tslib": "^2.6.2",
+		"typescript": "^5.4.5"
+	},
+	"dependencies": {
+		"monkey-around": "^3.0.0"
+	}
+}
