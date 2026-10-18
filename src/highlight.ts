@@ -1,5 +1,5 @@
 import { EditorState, StateEffect, StateField } from "@codemirror/state";
-import { Decoration, DecorationSet, EditorView } from "@codemirror/view";
+import { Decoration, DecorationSet, EditorView, ViewUpdate } from "@codemirror/view";
 
 export interface OffsetRange {
 	from: number;
@@ -51,7 +51,25 @@ const matchField = StateField.define<DecorationSet>({
 	provide: (f) => EditorView.decorations.from(f),
 });
 
-export const highlightExtension = [scopeField, matchField];
+const changeListeners = new Map<EditorView, (update: ViewUpdate) => void>();
+
+/**
+ * Call `listener` after every document change in `view`, until the returned
+ * function is called. The listener runs during CodeMirror's update, so it must
+ * not dispatch transactions synchronously.
+ */
+export function onDocChange(view: EditorView, listener: (update: ViewUpdate) => void): () => void {
+	changeListeners.set(view, listener);
+	return () => {
+		if (changeListeners.get(view) === listener) changeListeners.delete(view);
+	};
+}
+
+const notifyDocChanges = EditorView.updateListener.of((update) => {
+	if (update.docChanged) changeListeners.get(update.view)?.(update);
+});
+
+export const highlightExtension = [scopeField, matchField, notifyDocChanges];
 
 export function getScope(state: EditorState): OffsetRange[] {
 	const ranges: OffsetRange[] = [];
