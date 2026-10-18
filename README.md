@@ -15,7 +15,13 @@ Matching is literal and ignores case, the same as Obsidian's built-in search.
 
 The plugin uses only Obsidian's public API.
 
-## Install with BRAT
+## Install
+
+In Obsidian, open **Settings → Community plugins → Browse**, search for **Find + Replace in Selection**, then install and enable it. You can also open its [directory page](https://community.obsidian.md/plugins/find-replace-in-selection).
+
+### Beta builds with BRAT
+
+To try changes before they reach the directory:
 
 1. Install [BRAT](https://tfthacker.com/BRAT) from Community plugins.
 2. Run **BRAT: Add a beta plugin for testing** and enter `manojkarthick/obsidian-find-replace-selection`.
