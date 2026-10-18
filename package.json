@@ -1,6 +1,6 @@
 {
 	"name": "obsidian-find-replace-selection",
-	"version": "0.3.1",
+	"version": "0.3.2",
 	"description": "Find and replace limited to the selected text in Obsidian.",
 	"main": "main.js",
 	"scripts": {

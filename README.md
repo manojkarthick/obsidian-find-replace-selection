@@ -1,4 +1,4 @@
-# Find and Replace in Selection
+# Find + Replace in Selection
 
 Find and replace within the selected text in Obsidian.
 
@@ -19,7 +19,7 @@ The plugin uses only Obsidian's public API.
 
 1. Install [BRAT](https://tfthacker.com/BRAT) from Community plugins.
 2. Run **BRAT: Add a beta plugin for testing** and enter `manojkarthick/obsidian-find-replace-selection`.
-3. Turn on **Find and Replace in Selection** in Community plugins.
+3. Turn on **Find + Replace in Selection** in Community plugins.
 
 ## Release
 
