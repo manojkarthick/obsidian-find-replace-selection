@@ -1,0 +1,9 @@
+{
+	"id": "find-replace-in-selection",
+	"name": "Find and Replace in Selection",
+	"version": "0.1.0",
+	"minAppVersion": "1.4.0",
+	"description": "Find and replace limited to the selected text.",
+	"author": "Manoj Karthick",
+	"isDesktopOnly": false
+}
