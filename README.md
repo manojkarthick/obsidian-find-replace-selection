@@ -7,7 +7,7 @@ Find and replace within the selected text in Obsidian.
 1. Select the text to search within. Multiple selections work too.
 2. Run **Find and replace in selection** from the command palette, or assign it a hotkey.
 3. Enter the text to find and its replacement. Matches inside the selection are highlighted in the note, and the dialog shows how many there are. Use the arrow buttons to jump between them.
-4. Press **Enter** or click **Replace all**. One undo reverts every replacement.
+4. Click **Replace** to replace the current match and move to the next one, or press **Enter** or click **Replace all** to replace every match. One undo reverts a Replace all.
 
 Drag the dialog by its title to move it out of the way. It stays there for the rest of the session.
 

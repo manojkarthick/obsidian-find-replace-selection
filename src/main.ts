@@ -70,6 +70,7 @@ class FindReplaceModal extends Modal {
 		const footer = new Setting(this.contentEl)
 			.addExtraButton((b) => b.setIcon("arrow-up").setTooltip("Previous match").onClick(() => this.step(-1)))
 			.addExtraButton((b) => b.setIcon("arrow-down").setTooltip("Next match").onClick(() => this.step(1)))
+			.addButton((b) => b.setButtonText("Replace").onClick(() => this.replaceCurrent()))
 			.addButton((b) => b.setButtonText("Replace all").setCta().onClick(() => this.replaceAll()));
 		this.countEl = footer.infoEl;
 		this.search();
@@ -86,8 +87,11 @@ class FindReplaceModal extends Modal {
 		this.replaceAll();
 	}
 
-	/** Find literal, case-insensitive matches inside the selection, like Obsidian's own find. */
-	private search() {
+	/**
+	 * Find literal, case-insensitive matches inside the selection, like Obsidian's
+	 * own find. The first match at or after `from` becomes current.
+	 */
+	private search(from = 0) {
 		this.matches = [];
 		if (this.find) {
 			const pattern = new RegExp(escapeRegExp(this.find), "gi");
@@ -98,7 +102,8 @@ class FindReplaceModal extends Modal {
 				}
 			}
 		}
-		this.current = this.matches.length ? 0 : -1;
+		const next = this.matches.findIndex((m) => m.from >= from);
+		this.current = this.matches.length ? Math.max(next, 0) : -1;
 		this.showCurrent();
 	}
 
@@ -118,6 +123,18 @@ class FindReplaceModal extends Modal {
 		});
 		const n = this.matches.length;
 		this.countEl.setText(!this.find ? "" : n ? `${this.current + 1} of ${n} in selection` : "No matches in selection");
+	}
+
+	/** Replace the current match and move on to the next one. */
+	private replaceCurrent() {
+		if (!this.find) return;
+		// Search again first, in case the note changed since the last search.
+		const at = this.matches[this.current]?.from ?? 0;
+		this.search(at);
+		const match = this.matches[this.current];
+		if (!match) return;
+		this.dispatch({ changes: { ...match, insert: this.replace }, userEvent: "input.replace" });
+		this.search(match.from + this.replace.length);
 	}
 
 	private replaceAll() {
