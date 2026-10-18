@@ -7,20 +7,7 @@ settings:
 importers:
 
   .:
-    dependencies:
-      monkey-around:
-        specifier: ^3.0.0
-        version: 3.0.0
     devDependencies:
-      '@codemirror/search':
-        specifier: ^6.5.6
-        version: 6.7.2
-      '@codemirror/state':
-        specifier: ^6.4.1
-        version: 6.7.6
-      '@codemirror/view':
-        specifier: ^6.26.3
-        version: 6.43.14
       '@types/node':
         specifier: ^20.11.0
         version: 20.19.43
@@ -41,9 +28,6 @@ importers:
         version: 5.9.3
 
 packages:
-
-  '@codemirror/search@6.7.2':
-    resolution: {integrity: sha512-gUYkYhT2+n/+VGZ+8EzE5WFkYZUZYm1VOKDudIsNqh42uRVQJ0a6Yss9sdKT3MeOYfuL1N6AZA57oza0Oyr0LA==}
 
   '@codemirror/state@6.7.6':
     resolution: {integrity: sha512-kAz+AncRtKuIknedxT1bq4XwXv4UowhbkHU1myPrtVb/jZtImWuV5BXzv5vK6i3kYACsdiZiQKFQQ5Mq7elW8w==}
@@ -219,9 +203,6 @@ packages:
   moment@2.31.0:
     resolution: {integrity: sha512-0acOTfMiWOheYS4eoWb80yYMb/JLvVv9SHbs2PehaDzfUG0Bw855SKyk0IKTnPGa5+U2bmi3W68l1+sGLX/pvw==}
 
-  monkey-around@3.0.0:
-    resolution: {integrity: sha512-jL6uY2lEAoaHxZep1cNRkCZjoIWY4g5VYCjriEWmcyHU7w8NU1+JH57xE251UVTohK0lCxMjv0ZV4ByDLIXEpw==}
-
   obsidian@1.14.4:
     resolution: {integrity: sha512-Kyo+5t0wFW2On5irLOPrgtwWDnaJsvE9n/P1OVvdPytx+NqeHJXvxVqADNOqLp9bU1+I64B6i+dHb0fxR/ss3w==}
     peerDependencies:
@@ -246,12 +227,6 @@ packages:
     resolution: {integrity: sha512-dpojBhNsCNN7T82Tm7k26A6G9ML3NkhDsnw9n/eoxSRlVBB4CEtIQ/KTCLI2Fwf3ataSXRhYFkQi3SlnFwPvPQ==}
 
 snapshots:
-
-  '@codemirror/search@6.7.2':
-    dependencies:
-      '@codemirror/state': 6.7.6
-      '@codemirror/view': 6.43.14
-      crelt: 1.0.7
 
   '@codemirror/state@6.7.6':
     dependencies:
@@ -380,8 +355,6 @@ snapshots:
       '@esbuild/win32-x64': 0.21.5
 
   moment@2.31.0: {}
-
-  monkey-around@3.0.0: {}
 
   obsidian@1.14.4(@codemirror/state@6.7.6)(@codemirror/view@6.43.14):
     dependencies:

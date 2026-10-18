@@ -1,27 +1,24 @@
 # Find and Replace in Selection
 
-Adds a **Find in selection** toggle to Obsidian's built-in find and replace bar, so you can limit find, replace and replace all to the selected text.
+Find and replace within the selected text in Obsidian.
 
 ## Usage
 
-- Select some text and open find (`Cmd/Ctrl+F`) or replace (`Cmd/Ctrl+H`). For a multi-line selection, or several selections, the toggle turns on by itself. The selected area is highlighted.
-- Click the toggle in the find bar to turn it on or off. It uses the current editor selection.
-- Use the **Find and replace in selection** command (you can assign a hotkey) to open replace with the toggle on.
-
-In settings you can choose when the toggle turns on by itself: never, for multi-line selections (the default), or for any selection.
+1. Select the text to search within. Multiple selections work too.
+2. Run **Find and replace in selection** from the command palette, or assign it a hotkey.
+3. Enter the text to find and its replacement. The dialog shows how many matches the selection contains.
+4. Press **Enter** or click **Replace all**. One undo reverts every replacement.
 
 Matching is literal and ignores case, the same as Obsidian's built-in search.
+
+The plugin uses only Obsidian's public API.
 
 ## Install with BRAT
 
 1. Install [BRAT](https://tfthacker.com/BRAT) from Community plugins.
-2. Run **BRAT: Add a beta plugin for testing** and enter this repository's URL.
+2. Run **BRAT: Add a beta plugin for testing** and enter `manojkarthick/obsidian-find-replace-selection`.
 3. Turn on **Find and Replace in Selection** in Community plugins.
 
 ## Release
 
-Update `version` in `manifest.json` and `package.json`, add the version to `versions.json`, then push a tag with the same name (for example `0.1.1`, with no `v` prefix). The workflow builds the plugin and attaches `main.js`, `manifest.json` and `styles.css` to a GitHub release.
-
-## Note
-
-The plugin patches Obsidian's internal find bar, which isn't part of the public API, so an Obsidian update could break it.
+Update `version` in `manifest.json` and `package.json`, add the version to `versions.json`, then push a tag with the same name (for example `0.1.1`, with no `v` prefix). The workflow builds the plugin and attaches `main.js` and `manifest.json` to a GitHub release.
