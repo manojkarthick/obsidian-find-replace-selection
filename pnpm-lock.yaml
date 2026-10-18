@@ -9,17 +9,14 @@ importers:
   .:
     devDependencies:
       '@codemirror/state':
-        specifier: ^6.7.6
+        specifier: 6.7.6
         version: 6.7.6
       '@codemirror/view':
-        specifier: ^6.43.14
-        version: 6.43.14
+        specifier: 6.43.13
+        version: 6.43.13
       '@types/node':
         specifier: ^20.11.0
         version: 20.19.43
-      builtin-modules:
-        specifier: ^3.3.0
-        version: 3.3.0
       esbuild:
         specifier: ^0.21.5
         version: 0.21.5
@@ -27,8 +24,8 @@ importers:
         specifier: ^25.0.1
         version: 25.0.1
       obsidian:
-        specifier: latest
-        version: 1.14.4(@codemirror/state@6.7.6)(@codemirror/view@6.43.14)
+        specifier: 1.14.4
+        version: 1.14.4(@codemirror/state@6.7.6)(@codemirror/view@6.43.13)
       tslib:
         specifier: ^2.6.2
         version: 2.8.1
@@ -47,8 +44,8 @@ packages:
   '@codemirror/state@6.7.6':
     resolution: {integrity: sha512-kAz+AncRtKuIknedxT1bq4XwXv4UowhbkHU1myPrtVb/jZtImWuV5BXzv5vK6i3kYACsdiZiQKFQQ5Mq7elW8w==}
 
-  '@codemirror/view@6.43.14':
-    resolution: {integrity: sha512-hC45YnmJNR1rz42OF57BLoQNFMV12/13drnvibDsR2quNDmldcb4WvYVV81hFQg56i9lcqQMEDqilhX2QDcGQQ==}
+  '@codemirror/view@6.43.13':
+    resolution: {integrity: sha512-sihaFrUzAsYBQsL9J2t69y8nfMQGwcYmggAZsk+kjPbjYZMyuf2hU8tUNTZ+P+isb6XRr8JE22TZlJxBoVdH1A==}
 
   '@csstools/color-helpers@5.1.0':
     resolution: {integrity: sha512-S11EXWJyy0Mz5SYvRmY8nJYTFFd1LCNV+7cXyAgQtOOuzb4EsgfqDufL+9esx72/eLhsRdGZwaldu/h+E4t4BA==}
@@ -418,10 +415,6 @@ packages:
 
   asynckit@0.4.0:
     resolution: {integrity: sha512-Oei9OH4tRh0YqU3GxhX79dM/mwVgvbZJaSNaRk+bshkj0S5cfHcgYakreBjrHwatXKbz+IoIdYLxrKim2MjW0Q==}
-
-  builtin-modules@3.3.0:
-    resolution: {integrity: sha512-zhaCDicdLuWN5UbN5IMnFqNMhNfo919sH85y2/ea+5Yg9TsTkeZxpL+JLbp6cgYFS4sRLp3YV4S6yDuqVWHYOw==}
-    engines: {node: '>=6'}
 
   cac@6.7.14:
     resolution: {integrity: sha512-b6Ilus+c3RrdDk+JhLKUAQfzzgLEPy6wcXqS7f/xe1EETvsDP6GORG7SFuOs6cID5YkqchW/LXZbX5bc8j7ZcQ==}
@@ -843,7 +836,7 @@ snapshots:
     dependencies:
       '@marijn/find-cluster-break': 1.0.4
 
-  '@codemirror/view@6.43.14':
+  '@codemirror/view@6.43.13':
     dependencies:
       '@codemirror/state': 6.7.6
       crelt: 1.0.7
@@ -1081,8 +1074,6 @@ snapshots:
 
   asynckit@0.4.0: {}
 
-  builtin-modules@3.3.0: {}
-
   cac@6.7.14: {}
 
   call-bind-apply-helpers@1.0.2:
@@ -1302,10 +1293,10 @@ snapshots:
 
   nwsapi@2.2.28: {}
 
-  obsidian@1.14.4(@codemirror/state@6.7.6)(@codemirror/view@6.43.14):
+  obsidian@1.14.4(@codemirror/state@6.7.6)(@codemirror/view@6.43.13):
     dependencies:
       '@codemirror/state': 6.7.6
-      '@codemirror/view': 6.43.14
+      '@codemirror/view': 6.43.13
       '@types/codemirror': 5.60.8
       moment: 2.31.0
 
