@@ -1,11 +1,12 @@
 {
 	"name": "obsidian-find-replace-selection",
-	"version": "0.3.0",
+	"version": "0.3.1",
 	"description": "Find and replace limited to the selected text in Obsidian.",
 	"main": "main.js",
 	"scripts": {
 		"dev": "node esbuild.config.mjs",
-		"build": "tsc -noEmit -skipLibCheck && node esbuild.config.mjs production"
+		"build": "tsc -noEmit -skipLibCheck && node esbuild.config.mjs production",
+		"test": "vitest run"
 	},
 	"license": "MIT",
 	"devDependencies": {
@@ -14,8 +15,10 @@
 		"@types/node": "^20.11.0",
 		"builtin-modules": "^3.3.0",
 		"esbuild": "^0.21.5",
+		"jsdom": "^25.0.1",
 		"obsidian": "latest",
 		"tslib": "^2.6.2",
-		"typescript": "^5.4.5"
+		"typescript": "^5.4.5",
+		"vitest": "^2.1.9"
 	}
 }
